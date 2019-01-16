@@ -4,8 +4,8 @@ import re
 import pprint
 from io import open
 
-#email_pat = '(\w+)(?:@| ?at ?)(\w+.)(\w+)(.edu|.com|.org)'
-email_pat = '(\w+)(?:@| at )(\w+(?:.| dot ))(\w+)((?:.| dot )edu|(?:.| dot )com|(?:.| dot )org)'
+email_pat1 = '(\w+)(?:@| at )(\w+)((?:.| dot )edu|(?:.| dot )com|(?:.| dot )org)'
+email_pat2 = '(\w+)(?:@| at )(\w+(?:.| dot ))(\w+)((?:.| dot )edu|(?:.| dot )com|(?:.| dot )org)'
 #phone_pat = '(\(?\d\d\d\)?)(?:-| )(\d\d\d)(?:-| )(\d\d\d\d)' #gets spaces, parenthesis, etc. 
 phone_pat = '(\(?\d\d\d\)?)(?:-| |&thinsp;)(\d\d\d)(?:-| |&thinsp;)(\d\d\d\d)'
 
@@ -36,7 +36,11 @@ def process_file(name, f):
     # sys.stderr.write('[process_file]\tprocessing file: %s\n' % (path))
     res = []
     for line in f:
-        matches = re.findall(email_pat, line)
+        matches = re.findall(email_pat1, line)
+        for m in matches:
+            email = '%s@%s%s' % m
+            res.append((name, 'e', email))
+        matches = re.findall(email_pat2, line)
         for m in matches:
             email = '%s@%s%s%s' % m
             res.append((name, 'e', email))
