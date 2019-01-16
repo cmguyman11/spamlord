@@ -37,10 +37,14 @@ def process_file(name, f):
     for line in f:
         matches = re.findall(email_pat1, line)
         for m in matches:
+            print("M1: ")
+            print(m)
             email = '%s@%s%s' % m
             res.append((name, 'e', email))
         matches = re.findall(email_pat2, line)
         for m in matches:
+            print("m2: ")
+            print(m)
             email = '%s@%s%s%s' % m
             res.append((name, 'e', email))
         matches = re.findall(phone_pat, line)
