@@ -4,8 +4,8 @@ import re
 import pprint
 from io import open
 
-email_pat1 = '(\w+)(?:@| at )(\w+)(?:\.| dot )(edu|com|org)'
-email_pat2 = '(\w+)(?:@| at )(\w+)(?:\.| dot )(\w+)(?:\.| dot )(edu|com|org)'
+email_pat1 = '(\w+)(?:@| at |\(at\))(\w+)(?:\.| dot |\(dot\))(edu|com|org)'
+email_pat2 = '(\w+)(?:@| at |\(at\))(\w+)(?:\.| dot |\(dot\))(\w+)(?:\.| dot |\(dot\))(edu|com|org)'
 phone_pat = '(\(?\d\d\d\)?)(?:-| |&thinsp;)(\d\d\d)(?:-| |&thinsp;)(\d\d\d\d)'
 
 
@@ -37,14 +37,10 @@ def process_file(name, f):
     for line in f:
         matches = re.findall(email_pat1, line)
         for m in matches:
-            print("M1: ")
-            print(m)
             email = '%s@%s.%s' % m
             res.append((name, 'e', email))
         matches = re.findall(email_pat2, line)
         for m in matches:
-            print("m2: ")
-            print(m)
             email = '%s@%s.%s.%s' % m
             res.append((name, 'e', email))
         matches = re.findall(phone_pat, line)
