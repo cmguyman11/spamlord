@@ -4,8 +4,8 @@ import re
 import pprint
 from io import open
 
-email_pat = '(\w+)@(\w+.)(\w+)(.edu|.com|.org)'
-email_pat = '(\w+)(?:@| ?at ?)(\w+.)(\w+)(.edu|.com|.org)'
+#email_pat = '(\w+)(?:@| ?at ?)(\w+.)(\w+)(.edu|.com|.org)'
+email_pat = '(\w+)(?:@| at )(\w+(?:.| dot ))(\w+)((?:.| dot )edu|(?:.| dot )com|(?:.| dot )org)'
 #phone_pat = '(\(?\d\d\d\)?)(?:-| )(\d\d\d)(?:-| )(\d\d\d\d)' #gets spaces, parenthesis, etc. 
 phone_pat = '(\(?\d\d\d\)?)(?:-| |&thinsp;)(\d\d\d)(?:-| |&thinsp;)(\d\d\d\d)'
 
