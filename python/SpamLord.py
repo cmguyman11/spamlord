@@ -6,6 +6,7 @@ from io import open
 
 email_pat1 = '(\w+)(?:@| at |\(at\))(\w+)(?:\.| dot |\(dot\))(edu|com|org)'
 email_pat2 = '(\w+)(?:@| at |\(at\))(\w+)(?:\.| dot |\(dot\))(\w+)(?:\.| dot |\(dot\))(edu|com|org)'
+email_pat3 = 'obfuscate\(\'(\w+)\.(\w+)\',\'(\w+)\'\)'
 phone_pat = '(\(?\d\d\d\)?)(?:-| |&thinsp;)(\d\d\d)(?:-| |&thinsp;)(\d\d\d\d)'
 
 
@@ -42,6 +43,12 @@ def process_file(name, f):
         matches = re.findall(email_pat2, line)
         for m in matches:
             email = '%s@%s.%s.%s' % m
+            res.append((name, 'e', email))
+        matches = re.findall(email_pat3, line)
+        for m in matches:
+            print("m; ")
+            print(m)
+            email = m[2] + '@' + m[0] + '.' + m[1]
             res.append((name, 'e', email))
         matches = re.findall(phone_pat, line)
         for m in matches:
