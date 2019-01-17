@@ -7,7 +7,7 @@ from io import open
 email_pat1 = '(\w+|\w+\.\w+)(?: +)?(?:@| at |\(at\)|&#x40;)(?: +)?(\w+)(?: +)?(?:\.| dot |\(dot\)|;|dt| )(?: +)?(edu|com|org)[^\w]'
 email_pat2 = '(\w+|\w+\.\w+)(?: +)?(?:@| at |\(at\)|&#x40;)(?: +)?(\w+)(?: +)?(?:\.| dot |\(dot\)|;|dt| )(?: +)?(\w+)(?: +)?(?:\.| dot |\(dot\)|;|dt| )(?: +)?(edu|com|org)[^\w]'
 email_pat3 = 'obfuscate\(\'(\w+)\.(\w+)\',\'(\w+)\'\)'
-email_pat4 = '(\w+)(?: +)?(?:WHERE)(?: +)?(\w+)(?: +)?(?:DOM)(?: +)?(edu|com|org)'
+email_pat4 = '(\w+)(?: +)?(?:where)(?: +)?(\w+)(?: +)?(?:dom)(?: +)?(edu|com|org)'
 email_pat5 = '(\w+|\w+.\w+) \(followed by (?:&ldquo;|"|\')(?:@|at| at |\(at\))(\w+)\.(\w+)(?:&rdquo;|"|\')\)'
 email_pat6 = '(\w+|\w+.\w+) \(followed by (?:&ldquo;|"|\')(?:@|at| at |\(at\))(\w+)\.(\w+)\.(\w+)(?:&rdquo;|"|\')\)'
 email_pat7 = '((?:\w-)+)(?:@| at |\(at\)|&#x40;)((?:-\w-?)+)(?:\.| dot |\(dot\)|;|dt| )((?:-\w)+)'
@@ -41,41 +41,41 @@ def process_file(name, f):
     # sys.stderr.write('[process_file]\tprocessing file: %s\n' % (path))
     res = []
     for line in f:
-        line.lower()
+        line = line.lower()
         #print(line)
         matches = re.findall(email_pat1, line)
         for m in matches:
-            if m[0] != "Server":
+            if m[0] != "server":
                 email = '%s@%s.%s' % m
                 res.append((name, 'e', email))
         matches = re.findall(email_pat2, line)
         for m in matches:
-            if m[2] != "dot" and m[2] != "dt" and m[0] != "Server":
+            if m[2] != "dot" and m[2] != "dt" and m[0] != "server":
                 email = '%s@%s.%s.%s' % m
                 res.append((name, 'e', email))
         matches = re.findall(email_pat3, line)
         for m in matches:
-            if m[2] != "Server":
+            if m[2] != "server":
                 email = m[2] + '@' + m[0] + '.' + m[1]
                 res.append((name, 'e', email))
         matches = re.findall(email_pat4, line)
         for m in matches:
-            if m[0] != "Server":
+            if m[0] != "server":
                 email = m[0] + '@' + m[1] + '.' + m[2]
                 res.append((name, 'e', email))
         matches = re.findall(email_pat5, line)
         for m in matches:
-            if m[0] != "Server":
+            if m[0] != "server":
                 email = '%s@%s.%s' % m
                 res.append((name, 'e', email))
         matches = re.findall(email_pat6, line)
         for m in matches:
-            if m[0] != "Server":
+            if m[0] != "server":
                 email = '%s@%s.%s.%s' % m
                 res.append((name, 'e', email))
         matches = re.findall(email_pat7, line)
         for m in matches:
-            if m[0] != "Server":
+            if m[0] != "server":
                 words = []
                 for i in range(0,len(m)):
                     words.append(m[i].replace('-',''))
