@@ -40,9 +40,6 @@ def process_file(name, f):
     # sys.stderr.write('[process_file]\tprocessing file: %s\n' % (path))
     res = []
     for line in f:
-        if line.find("d-l-w-h") is not -1:
-            print(line)
-            print(name)
         line.lower()
         print(line)
         matches = re.findall(email_pat1, line)
@@ -50,8 +47,6 @@ def process_file(name, f):
             if m[0] != "Server":
                 email = '%s@%s.%s' % m
                 res.append((name, 'e', email))
-            else:
-                print("m at 0:" + m[0])
         matches = re.findall(email_pat2, line)
         for m in matches:
             if m[2] != "dot" and m[2] != "dt" and m[0] != "Server":
