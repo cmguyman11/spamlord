@@ -8,8 +8,8 @@ email_pat1 = '(\w+|\w+\.\w+)(?: +)?(?:@| at |\(at\)|&#x40;)(?: +)?(\w+)(?:\.| do
 email_pat2 = '(\w+|\w+\.\w+)(?: +)?(?:@| at |\(at\)|&#x40;)(?: +)?(\w+)(?:\.| dot |\(dot\)|;)(\w+)(?:\.| dot |\(dot\)|;)(edu|com|org)'
 email_pat3 = 'obfuscate\(\'(\w+)\.(\w+)\',\'(\w+)\'\)'
 email_pat4 = '(\w+)(?: +)?(?:WHERE)(?: +)?(\w+)(?: +)?(?:DOM)(?: +)?(edu|com|org)'
-email_pat5 = '(\w+) \(followed by &(?:\w+);(?:@|at| at |\(at\))(\w+)\.(\w+)&(?:\w+);\)'
-email_pat6 = '(\w+) \(followed by &(?:\w+);(?:@|at| at |\(at\))(\w+)\.(\w+)\.(\w+)&(?:\w+);\)'
+email_pat5 = '(\w+|\w+.\w+) \(followed by (?:&ldquo;|"|\')(?:@|at| at |\(at\))(\w+)\.(\w+)(?:&rdquo;|"|\')\)'
+email_pat6 = '(\w+|\w+.\w+) \(followed by (?:&ldquo;|"|\')(?:@|at| at |\(at\))(\w+)\.(\w+)\.(\w+)(?:&rdquo;|"|\')\)'
 phone_pat1 = '(?:\(?(\d\d\d)\)?)(?:-| |&(?:\w+);)(\d\d\d)(?:-| |&(?:\w+);)(\d\d\d\d)'
 phone_pat2 = '(?:\((\d\d\d)\))\(?(?:-| |&(?:\w+);|)\)?\(?(\d\d\d)\)?(?:-| |&(?:\w+);|)\(?(\d\d\d\d)\)?'
 
