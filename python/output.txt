@@ -13685,6 +13685,9 @@ and (by courtesy) Computer Science</span></b></p>
 
 d-l-w-h-@-s-t-a-n-f-o-r-d-.-e-d-u
 
+dlwh
+d-l-w-h-@-s-t-a-n-f-o-r-d-.-e-d-u
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 
@@ -20114,7 +20117,7 @@ personalon.src = "images/bPersonalP.gif";
 
 </html>
 
-True Positives (112): 
+True Positives (115): 
 {('ashishg', 'e', 'ashishg@stanford.edu'),
  ('ashishg', 'e', 'rozm@stanford.edu'),
  ('ashishg', 'p', '650-723-1614'),
@@ -20185,6 +20188,8 @@ True Positives (112):
  ('ok', 'p', '650-723-9753'),
  ('ok', 'p', '650-725-1449'),
  ('ouster', 'e', 'ouster@cs.stanford.edu'),
+ ('ouster', 'e', 'teresa.lynn@stanford.edu'),
+ ('pal', 'e', 'pal@cs.stanford.edu'),
  ('pal', 'p', '650-725-9046'),
  ('psyoung', 'e', 'patrick.young@stanford.edu'),
  ('rajeev', 'p', '650-723-4377'),
@@ -20211,6 +20216,7 @@ True Positives (112):
  ('tim', 'p', '650-724-9147'),
  ('tim', 'p', '650-725-2340'),
  ('tim', 'p', '650-725-4671'),
+ ('ullman', 'e', 'support@gradiance.com'),
  ('ullman', 'e', 'ullman@cs.stanford.edu'),
  ('ullman', 'p', '650-494-8016'),
  ('ullman', 'p', '650-725-2588'),
@@ -20227,13 +20233,8 @@ True Positives (112):
  ('zm', 'e', 'manna@cs.stanford.edu'),
  ('zm', 'p', '650-723-4364'),
  ('zm', 'p', '650-725-4671')}
-False Positives (2): 
-{('jure', 'e', 'server@cs.stanford.edu'),
- ('plotkin', 'e', 'server@infolab.stanford.edu')}
-False Negatives (5): 
-{('cheriton', 'e', 'uma@cs.stanford.edu'),
- ('dlwh', 'e', 'dlwh@stanford.edu'),
- ('ouster', 'e', 'teresa.lynn@stanford.edu'),
- ('pal', 'e', 'pal@cs.stanford.edu'),
- ('ullman', 'e', 'support@gradiance.com')}
-Summary: tp=112, fp=2, fn=5
+False Positives (1): 
+{('manning', 'e', 'funding@stanford.com')}
+False Negatives (2): 
+{('cheriton', 'e', 'uma@cs.stanford.edu'), ('dlwh', 'e', 'dlwh@stanford.edu')}
+Summary: tp=115, fp=1, fn=2
