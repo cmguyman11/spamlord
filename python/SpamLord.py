@@ -4,8 +4,8 @@ import re
 import pprint
 from io import open
 
-email_pat1 = '(\w+)(?: +)?(?:@| at |\(at\))(?: +)?(\w+)(?:\.| dot )(edu|com|org)'
-email_pat2 = '(\w+)(?: +)?(?:@| at |\(at\))(?: +)?(\w+)(?:\.| dot |\(dot\))(\w+)(?:\.| dot |\(dot\))(edu|com|org)'
+email_pat1 = '(\w+)(?: +)?(?:@| at |\(at\))(?: +)?(\w+)(?:\.| dot |\(dot\)|;)(edu|com|org)'
+email_pat2 = '(\w+)(?: +)?(?:@| at |\(at\))(?: +)?(\w+)(?:\.| dot |\(dot\)|;)(\w+)(?:\.| dot |\(dot\)|;)(edu|com|org)'
 email_pat3 = 'obfuscate\(\'(\w+)\.(\w+)\',\'(\w+)\'\)'
 email_pat4 = '(\w+)(?: +)?(?:WHERE)(?: +)?(\w+)(?: +)?(?:DOM)(?: +)?(edu|com|org)'
 phone_pat1 = '(?:\(?(\d\d\d)\)?)(?:-| |&(?:\w+);)(\d\d\d)(?:-| |&(?:\w+);)(\d\d\d\d)'
@@ -38,7 +38,7 @@ def process_file(name, f):
     # sys.stderr.write('[process_file]\tprocessing file: %s\n' % (path))
     res = []
     for line in f:
-        #print(line)
+        print(line)
         matches = re.findall(email_pat1, line)
         for m in matches:
             email = '%s@%s.%s' % m
