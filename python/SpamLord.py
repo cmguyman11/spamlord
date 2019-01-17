@@ -10,6 +10,7 @@ email_pat3 = 'obfuscate\(\'(\w+)\.(\w+)\',\'(\w+)\'\)'
 email_pat4 = '(\w+)(?: +)?(?:WHERE)(?: +)?(\w+)(?: +)?(?:DOM)(?: +)?(edu|com|org)'
 email_pat5 = '(\w+|\w+.\w+) \(followed by (?:&ldquo;|"|\')(?:@|at| at |\(at\))(\w+)\.(\w+)(?:&rdquo;|"|\')\)'
 email_pat6 = '(\w+|\w+.\w+) \(followed by (?:&ldquo;|"|\')(?:@|at| at |\(at\))(\w+)\.(\w+)\.(\w+)(?:&rdquo;|"|\')\)'
+email_pat7 = '((?:\w-)+)(?:@| at |\(at\)|&#x40;)((?:-\w-?)+)(?:\.| dot |\(dot\)|;|dt| )((?:-\w)+)'
 phone_pat1 = '(?:\(?(\d\d\d)\)?)(?:-| |&(?:\w+);)(\d\d\d)(?:-| |&(?:\w+);)(\d\d\d\d)'
 phone_pat2 = '(?:\((\d\d\d)\))\(?(?:-| |&(?:\w+);|)\)?\(?(\d\d\d)\)?(?:-| |&(?:\w+);|)\(?(\d\d\d\d)\)?'
 
@@ -41,7 +42,7 @@ def process_file(name, f):
     res = []
     for line in f:
         line.lower()
-        print(line)
+        #print(line)
         matches = re.findall(email_pat1, line)
         for m in matches:
             if m[0] != "Server":
@@ -71,6 +72,14 @@ def process_file(name, f):
         for m in matches:
             if m[0] != "Server":
                 email = '%s@%s.%s.%s' % m
+                res.append((name, 'e', email))
+        matches = re.findall(email_pat7, line)
+        for m in matches:
+            if m[0] != "Server":
+                words = []
+                for i in range(0,len(m)):
+                    words.append(m[i].replace('-',''))
+                email = words[0] + '@' + words[1] + '.' + words[2]
                 res.append((name, 'e', email))
         matches = re.findall(phone_pat1, line)
         for m in matches:
