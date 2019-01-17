@@ -4,8 +4,8 @@ import re
 import pprint
 from io import open
 
-email_pat1 = '(\w+)(?: +)?(?:@| at |\(at\))(?: +)?(\w+)(?:\.| dot |\(dot\)|;)(edu|com|org)'
-email_pat2 = '(\w+)(?: +)?(?:@| at |\(at\))(?: +)?(\w+)(?:\.| dot |\(dot\)|;)(\w+)(?:\.| dot |\(dot\)|;)(edu|com|org)'
+email_pat1 = '(\w+)(?: +)?(?:@| at |\(at\)|&#x40;)(?: +)?(\w+)(?:\.| dot |\(dot\)|;)(edu|com|org)'
+email_pat2 = '(\w+)(?: +)?(?:@| at |\(at\)|&#x40;)(?: +)?(\w+)(?:\.| dot |\(dot\)|;)(\w+)(?:\.| dot |\(dot\)|;)(edu|com|org)'
 email_pat3 = 'obfuscate\(\'(\w+)\.(\w+)\',\'(\w+)\'\)'
 email_pat4 = '(\w+)(?: +)?(?:WHERE)(?: +)?(\w+)(?: +)?(?:DOM)(?: +)?(edu|com|org)'
 phone_pat1 = '(?:\(?(\d\d\d)\)?)(?:-| |&(?:\w+);)(\d\d\d)(?:-| |&(?:\w+);)(\d\d\d\d)'

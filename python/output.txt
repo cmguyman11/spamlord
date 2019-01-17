@@ -20114,7 +20114,7 @@ personalon.src = "images/bPersonalP.gif";
 
 </html>
 
-True Positives (106): 
+True Positives (107): 
 {('ashishg', 'e', 'ashishg@stanford.edu'),
  ('ashishg', 'e', 'rozm@stanford.edu'),
  ('ashishg', 'p', '650-723-1614'),
@@ -20145,6 +20145,7 @@ True Positives (106):
  ('hanrahan', 'p', '650-723-8530'),
  ('horowitz', 'p', '650-725-3707'),
  ('horowitz', 'p', '650-725-6949'),
+ ('jks', 'e', 'jks@robotics.stanford.edu'),
  ('jurafsky', 'e', 'jurafsky@stanford.edu'),
  ('jurafsky', 'p', '650-723-5666'),
  ('kosecka', 'e', 'kosecka@cs.gmu.edu'),
@@ -20226,10 +20227,9 @@ False Positives (4):
  ('nick', 'e', 'parlante@cs.stanford.edu'),
  ('plotkin', 'e', 'server@infolab.stanford.edu'),
  ('psyoung', 'e', 'young@stanford.edu')}
-False Negatives (11): 
+False Negatives (10): 
 {('cheriton', 'e', 'uma@cs.stanford.edu'),
  ('dlwh', 'e', 'dlwh@stanford.edu'),
- ('jks', 'e', 'jks@robotics.stanford.edu'),
  ('levoy', 'e', 'ada@graphics.stanford.edu'),
  ('levoy', 'e', 'melissa@graphics.stanford.edu'),
  ('nick', 'e', 'nick.parlante@cs.stanford.edu'),
@@ -20238,4 +20238,4 @@ False Negatives (11):
  ('pal', 'e', 'pal@cs.stanford.edu'),
  ('psyoung', 'e', 'patrick.young@stanford.edu'),
  ('ullman', 'e', 'support@gradiance.com')}
-Summary: tp=106, fp=4, fn=11
+Summary: tp=107, fp=4, fn=10
