@@ -20226,11 +20226,9 @@ True Positives (111):
  ('zm', 'e', 'manna@cs.stanford.edu'),
  ('zm', 'p', '650-723-4364'),
  ('zm', 'p', '650-725-4671')}
-False Positives (4): 
+False Positives (2): 
 {('jure', 'e', 'server@cs.stanford.edu'),
- ('nick', 'e', 'parlante@cs.stanford.edu'),
- ('plotkin', 'e', 'server@infolab.stanford.edu'),
- ('psyoung', 'e', 'young@stanford.edu')}
+ ('plotkin', 'e', 'server@infolab.stanford.edu')}
 False Negatives (6): 
 {('cheriton', 'e', 'uma@cs.stanford.edu'),
  ('dlwh', 'e', 'dlwh@stanford.edu'),
@@ -20238,4 +20236,4 @@ False Negatives (6):
  ('ouster', 'e', 'teresa.lynn@stanford.edu'),
  ('pal', 'e', 'pal@cs.stanford.edu'),
  ('ullman', 'e', 'support@gradiance.com')}
-Summary: tp=111, fp=4, fn=6
+Summary: tp=111, fp=2, fn=6
